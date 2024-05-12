@@ -1,0 +1,9 @@
+query pegar {
+    pegar {
+        id
+        nome
+        estado
+        criado
+        editado
+    }
+}

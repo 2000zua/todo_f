@@ -1,0 +1,58 @@
+type Query {
+  pegar: [Tarefas!]!
+}
+
+directive @specifiedBy(
+  url: String!
+) on SCALAR
+
+
+scalar DateTime
+
+enum Estato {
+  CONCLUIDO
+  NAO_CONCLUIDO
+}
+
+
+
+type Tarefas {
+  id: ID!
+  nome: String!
+  estado: Estato!
+  criado: DateTime!
+  editado: DateTime!
+}
+
+type TarefasAvgAggregate {
+  id: Float
+}
+
+type TarefasCountAggregate {
+  id: Int!
+  nome: Int!
+  estado: Int!
+  criado: Int!
+  editado: Int!
+  _all: Int!
+}
+
+type TarefasMaxAggregate {
+  id: Int
+  nome: String
+  estado: Estato
+  criado: DateTime
+  editado: DateTime
+}
+
+type TarefasMinAggregate {
+  id: Int
+  nome: String
+  estado: Estato
+  criado: DateTime
+  editado: DateTime
+}
+
+type TarefasSumAggregate {
+  id: Int
+}
